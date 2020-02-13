@@ -1,0 +1,59 @@
+#!/bin/bash
+fast(){
+	seq=""
+	for i in {60..01}; do
+		key=""
+		printf "\rEnter a sequence. You have $i second  "
+		read -n 1 -t 1 -s key
+		seq+="key"
+	done
+	echo -e "\n$sed"
+	if [ "$sed" == "4815162342" ]; then slow; fi
+	RED='\033[0;31m'
+	printf "${RED}\
+	MMMMMMMMMMMMMMMMXx,..........................,dXMMMMMMMMMMMMMMMM
+    MMMMMMMMMMMMMMXx,  ':ccccccccccccccccccccclc'  'dXMMMMMMMMMMMMMM
+    MMMMMMMMMMMMXd'  'dXMWKOOOOOOOOOOOOOOOOOOXMMXx,  'dXMMMMMMMMMMMM
+    MMMMMMMMMMXd'  'dXXOKNd.................,kWKkKXx,  'dXMMMMMMMMMM
+    MMMMMMMMXd'  'dXXx'.cXNx;,,,,,lddc,,',,:kWNo..oKXx,  'dXMMMMMMMM
+    MMMMMMXd'  'dXXx, .;:l00:'''.'oOkc.'.''lXXdc:. .oKXx,  'dXMMMMMM
+    MMMMXd'  'dXWNo..;:'..kWXd;;;;::::;;;:kWW0, .::..lXWXx,  'dXWMMM
+    MMXd'  'dXXx:ckd:'..:c:xNk:;;;;;;;;;;lKWk:cc' 'dOkl;oKXx,  'dXMM
+    Xd'  ,dXXx, .;c' .:c' .dNMMWWNXXXNNWWMMWx. 'loodlc:. .oKXx,  'dX
+    ;  'xXNk, .;:. .cl, .c0WXkoc;,'''',;cdONWKo;okxl' .;:. .dNNx,  ,
+    . .kMMNOodd;..cl, .c0Xkc.              'l0NWK:..::..,odokNMMO. .
+    . .OMO:l0KOkkKk,.c0NO;                   .cKWKo',xKkxOXkcdNM0' .
+    . .OWd .c;.lK0O0XWNd.                      'kWWX0OKO;,l, ;XM0' .
+    . .OWd .c' ;o..xWWx.                        'OMK:.co..c, ;XM0' .
+    . .OWd..c, ;o. oWK; .'..... .. .....     ..  cN0' :o..c, ;XM0' .
+    . .OWd..oxcx0ol0MO__________LOLKEK___________KXdckdd..c, ;XM0' .
+    . .OWd..ll.lk;'xWO. ,:'....''.';:,''''.',... ;XXl,do..c, ;XM0' .
+    . .OWd..c, ;o. oWX:                          oW0' :o..c, ;XM0' .
+    . 'OWd..c, :xc:OWM0,                        :XMNd;dd..c, ;XM0' .
+    . 'OWd..ddlONXOk0WW0;                     .cXWKxkKWKolx; ;XM0' .
+    . '0MXkOXXxcox:..c0WXd'                 .;kN0l. ,ddlxXN0xOWM0' .
+    . .xWM0c;cc' .;c, .c0WXkc'.          .,lOX0l. 'cc...:c,;OWMWx. .
+    l. .cOKd' .:c'.;kd, .c0WMNKkdolllloxOKWW0c. ,cc. .:;. 'dXW0c. .c
+    W0c. .:OKd' .okkl;:c,.'OWNKKKXNNXKKKKNWK;.,lc. .:;. 'dXNOc. .c0W
+    MMW0c. .:OKxoxolc' .coxXXc...,kd,'...cKWOoc...:;. 'dXNO:. .c0WMM
+    MMMMW0c. .:ON0, .::..lNXxc;;;:doc:;;;ckNNl..:;. 'dXNO:. .c0WMMMM
+    MMMMMMW0l. .:OKd' .:dKNo..............'xWXd;. ,xXNO:. .l0WMMMMMM
+    MMMMMMMMW0l. .:kKd,;0Wk:,,,,,:xd:;,,,,;cOW0:;xXNk;. .l0WMMMMMMMM
+    MMMMMMMMMMW0l. .:kKXWKc'''''':Ok:,''''''lXMNWNk;. .lKWMMMMMMMMMM
+    MMMMMMMMMMMMWKl. .;k00OOOOOOOO00OOOOOOOOO000x;  .oKWMMMMMMMMMMMM
+    MMMMMMMMMMMMMMWKl.  ........................  .oKWMMMMMMMMMMMMMM
+    MMMMMMMMMMMMMMMMWO;.......................'.':OWMMMMMMMMMMMMMMMM\n"
+	exit
+}
+
+slow(){
+for i in {86400..01}
+do
+	h=$((i / 3600))
+	m=$((i % 3600 / 60))
+	s=$((i % 60))
+	printf "\r%02d:%02d:%02d" $h $m $s
+done
+fast
+}
+slow

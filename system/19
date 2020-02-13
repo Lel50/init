@@ -1,0 +1,2 @@
+systemctl list-until-files --state enabled | cat
+systemctl list-until-files --state static | cat
